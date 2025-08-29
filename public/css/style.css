@@ -1,10 +1,13 @@
-html,
-body {
+* {
     box-sizing: border-box;
-    width: 100%;
-    height: 100%;
     padding: 0;
     margin: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
 }
 
 body {
@@ -21,7 +24,7 @@ header {
     width: auto;
     height: 8vh;
     color: #fff;
-    padding: 15px 30px;
+    padding: 35px 40px;
     align-items: center;
     justify-content: space-between;
 }
@@ -55,16 +58,17 @@ a {
     transition: all 0.5s ease;
 }
 
-header>nav>ul>li {
+header > nav > ul > li {
     transition: all 0.5s ease;
 }
 
-header>nav>ul>li>a:active {
+header > nav > ul > li > a:active {
     color: #5b5b5b;
     transition: 0.2s all ease;
 }
 
-header>nav>ul>li:hover, a:hover {
+header > nav > ul > li:hover,
+a:hover {
     transform: scale(1.1);
 }
 
@@ -73,4 +77,150 @@ ul {
     display: flex;
     width: auto;
     gap: 50px;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 40px;
+    margin-top: 50px;
+}
+
+.welcome > h1 {
+    color: #b5964d;
+    margin-right: auto;
+    width: 30%;
+}
+
+.welcome > h1 > span {
+    font-weight: 300;
+    color: #fff;
+}
+
+.welcome > img {
+    object-fit: cover;
+    height: 650px;
+    width: 85vw;
+    object-position: bottom;
+}
+
+.cards-statue {
+    width: 100%;
+    border-bottom: 4px solid #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+    padding: 0 5vw;
+    margin-top: 50px;
+}
+
+.cards-statue > .card {
+    height: auto;
+    width: 185px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards-statue > .card > img {
+    margin-top: 10px;
+    transition: transform 0.5s ease;
+}
+
+.cards-statue > .card > img:hover {
+    transform: scale(1.1);
+}
+
+.card-l {
+    width: 4px;
+    background: #d9d9d9;
+}
+
+.card-h {
+    color: #b5964d;
+    font-size: clamp(5px, 12px, 15px);
+}
+
+.card-p {
+    color: #fff;
+    font-size: clamp(5px, 10px, 15px);
+}
+
+.home-about {
+    color: #fff;
+    width: 70vw;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.home-about-h > h2 {
+    color: #b5964d;
+}
+
+.home-about-h > h3 {
+    font-weight: 400;
+}
+
+.home-about-t {
+    margin-top: 30px;
+}
+
+.home-about-t > span {
+    color: #b5964d;
+}
+
+.home-faq {
+    color: #fff;
+    margin: 0 auto;
+    width: 70vw;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-faq-h {
+    margin-bottom: 20px;
+    margin-right: auto;
+}
+
+.home-faq-h > h2 {
+    color: #b5964d;
+}
+
+.home-about-h > h3 {
+    font-weight: 400;
+}
+
+.home-faq > section {
+    width: 450px;
+}
+
+.home-faq > section > details {
+    margin-bottom: 20px;
+}
+
+.home-faq > section > details > summary {
+    color: #b5964d;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+}
+
+.home-faq > section > details > p {
+    margin-top: 10px;
+}
+
+.home-faq > section > details > summary::after {
+    content: ">";
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.home-faq > section > details[open] summary:before {
+    content: "-";
 }
