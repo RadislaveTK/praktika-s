@@ -8,11 +8,11 @@
 
     <nav>
         <ul>
-            <li><a href="{{ route('home') }}">Новости</a></li>
-            <li><a href="">Выставки</a></li>
-            <li><a href="">Коллекция</a></li>
+            <li><a href="{{ route('news.show') }}">Новости</a></li>
+            <li><a href="{{ route('exhibitions.show') }}">Выставки</a></li>
+            <li><a href="{{ route('collections.show') }}">Коллекция</a></li>
             <li><a href="">О музее</a></li>
-            <li><a href="">Билеты</a></li>
+            <li><a href="{{ route('ticket.buy') }}">Билеты</a></li>
         </ul>
     </nav>
 </header>

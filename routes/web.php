@@ -1,6 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminAuthController;
+use App\Http\Controllers\ColectionsController;
+use App\Http\Controllers\ExhibController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\TicketsController;
+use App\Http\Controllers\UserAuthController;
+
+# Functions
 
 Route::get('/', function () {
     return view('pages.home');
@@ -10,22 +18,28 @@ Route::get('/about', function () {
     return view('pages.about');
 })->name('about');
 
-Route::get('/exhibitions', function () {
-    return view('pages.exhibitions');
-})->name('exhibitions');
+# Controllers
 
-Route::get('/collections', function () {
-    return view('pages.collections');
-})->name('collections');
+Route::get('/exhibitions', [ExhibController::class, 'show'])->name('exhibitions.show');
+Route::post('/exhibitions/create', [ExhibController::class, 'create'])->name('exhibitions.create');
+Route::get('/exhibitions/delete', [ExhibController::class, 'delete'])->name('exhibitions.delete');
 
-Route::get('/news', function () {
-    return view('pages.news');
-})->name('news');
+Route::get('/collections', [ColectionsController::class, 'show'])->name('collections.show');
+Route::post('/collections/create', [ColectionsController::class, 'create'])->name('collections.create');
+Route::get('/collections/delete', [ColectionsController::class, 'delete'])->name('collections.delete');
 
-Route::get('/contacts', function () {
-    return view('pages.contacts');
-})->name('contacts');
+Route::get('/news', [NewsController::class, 'show'])->name('news.show');
+Route::post('/news/create', [NewsController::class, 'create'])->name('news.create');
+Route::get('/news/delete', [NewsController::class, 'delete'])->name('news.delete');
 
-Route::get('/buy-tickets', function () {
-    return view('pages.buy');
-})->name('buy');
+Route::get('/tickets/buy', [TicketsController::class, 'showBuyForm'])->name('ticket.buy');
+Route::get('/tickets/verify', [TicketsController::class, 'showVerification'])->name('ticket.verify');
+
+# Auth admin / Admin panel
+
+Route::get('/admin/login', [UserAuthController::class, 'showLoginForm'])->middleware('guest')->name('login');
+Route::post('/admin/login', [UserAuthController::class, 'login']);
+Route::post('/admin/logout', [UserAuthController::class, 'logout'])->name('logout');
+
+Route::get('/admin/panel', [UserAuthController::class, 'showAdminPanel'])->middleware('auth')->name('admin.panel');
+

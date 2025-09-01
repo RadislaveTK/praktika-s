@@ -17,6 +17,9 @@ body {
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "wdth" 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 header {
@@ -103,6 +106,11 @@ ul {
     height: 650px;
     width: 85vw;
     object-position: bottom;
+    transition: all 0.5s ease;
+}
+
+.welcome > img:hover {
+    transform: scale(1.1);
 }
 
 .cards-statue {
@@ -196,7 +204,7 @@ ul {
 }
 
 .home-faq > section {
-    width: 450px;
+    width: 460px;
 }
 
 .home-faq > section > details {
@@ -215,12 +223,191 @@ ul {
 }
 
 .home-faq > section > details > summary::after {
-    content: ">";
+    content: "▷";
     font-size: 20px;
     font-weight: bold;
     margin-left: 5px;
 }
 
-.home-faq > section > details[open] summary:before {
-    content: "-";
+.home-faq > section > details[open] summary::after {
+    content: "▽";
+}
+
+details:open {
+    transition: all 1s ease;
+}
+
+footer {
+    width: 100%;
+    height: auto;
+    padding: 20px 40px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 8px;
+    color: #d9d9d9;
+}
+
+footer > .times > h4 {
+    color: #b5964d;
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-size: 15px;
+}
+
+footer > .contacts {
+    grid-column-start: 5;
+    grid-row-start: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+footer > .contacts > img {
+    width: 30px;
+    height: 30px;
+}
+
+footer > .author {
+    grid-column: span 5 / span 5;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    text-align: center;
+}
+
+footer > .author > span {
+    color: #b5964d;
+}
+
+.login {
+    width: 300px;
+    height: auto;
+    margin: auto auto;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login > .inp {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 5px 10px;
+}
+
+.login > .inp > input {
+    height: 25px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+.login > .btn {
+    background-color: #b5964d;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    margin: 20px;
+    width: 150px;
+    transition: all 0.5s ease;
+}
+
+.login > .btn:hover {
+    transform: scale(1.1);
+}
+
+.logout {
+    position: absolute;
+    right: 5%;
+}
+
+.logout > .btn {
+    background-color: #b5964d;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    width: 150px;
+    transition: all 0.5s ease;
+}
+
+.logout > .btn:hover {
+    transform: scale(1.1);
+}
+
+.login-h {
+    color: #b5964d;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cards {
+    color: #fff;
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.cards > .card {
+    width: 25vw;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 1px solid #b5964d;
+    padding: 5px;
+    transition: all 0.5s ease;
+    background-color: #ffffff30;
+}
+
+.cards > .card:hover {
+    transform: scale(1.1);
+    backdrop-filter: blur(10px);
+}
+
+.cards > .card > h2 {
+    border-bottom: 2px solid #b5964d;
+    margin-bottom: 10px;
+}
+
+.cards > .card > em {
+    margin-top: 10px;
+}
+
+.cards > .card > img {
+    width: 100%;
+    max-height: 330px;
+    border-radius: 5px;
+}
+
+.news-h {
+    color: #b5964d;
+    margin: 50px auto 30px auto;
+}
+
+.ticket {
+    width: 25vw;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 1px solid #b5964d;
+    padding: 5px;
+    transition: all 0.5s ease;
+    background-color: #ffffff30;
+}
+
+.ticket:hover {
+    transform: scale(1.1);
+    backdrop-filter: blur(10px);
+}
+
+.ticket > h2 {
+    border-bottom: 2px solid #b5964d;
+    margin-bottom: 10px;
 }
