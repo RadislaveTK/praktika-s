@@ -33,7 +33,8 @@ Route::post('/news/create', [NewsController::class, 'create'])->name('news.creat
 Route::get('/news/delete', [NewsController::class, 'delete'])->name('news.delete');
 
 Route::get('/tickets/buy', [TicketsController::class, 'showBuyForm'])->name('ticket.buy');
-Route::get('/tickets/verify', [TicketsController::class, 'showVerification'])->name('ticket.verify');
+Route::post('/tickets/buy', [TicketsController::class, 'create']);
+Route::post('/tickets/verify', [TicketsController::class, 'showVerification'])->name('ticket.verify');
 
 # Auth admin / Admin panel
 
@@ -42,4 +43,3 @@ Route::post('/admin/login', [UserAuthController::class, 'login']);
 Route::post('/admin/logout', [UserAuthController::class, 'logout'])->name('logout');
 
 Route::get('/admin/panel', [UserAuthController::class, 'showAdminPanel'])->middleware('auth')->name('admin.panel');
-
